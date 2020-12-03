@@ -1,0 +1,28 @@
+name: Develop
+on:
+  push:
+    branches:
+      - develop
+
+jobs:
+  build:
+    name: Build image
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+      - name: Package
+        run: cd src && zip -r ../unison-homepage.zip . && cd ..
+      - name: Resolve branch name
+        id: vars
+        run: echo ::set-output name=branch_name::${GITHUB_REF#refs/*/}
+      - name: Create Release
+        id: release
+        run: ./release/create_release.sh ${{ github.run_number }} ${{ steps.vars.outputs.branch_name }}
+        env:
+          TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Upload Asset
+        id: asset
+        run: ./release/upload_asset.sh ${{ github.run_number }} ${{ steps.release.outputs.release_upload_url }} ./unison-homepage.zip
+        env:
+          TOKEN: ${{ secrets.GITHUB_TOKEN }}

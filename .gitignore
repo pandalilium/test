@@ -1,0 +1,13 @@
+#
+#
+#
+target
+*~
+*.iml
+*.ipr
+*.iws
+*.ids
+.idea
+*.versionsBackup
+.java-version
+.releases
