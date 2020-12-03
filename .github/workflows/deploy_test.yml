@@ -1,0 +1,23 @@
+name: Deploy To Test
+on:
+  workflow_dispatch:
+    inputs:
+      build_number:
+        description: 'Build number'
+        required: true
+
+jobs:
+  deploy-test:
+    name: Deploy to test server
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Decrypt deployment key
+        run: deploy/decrypt.sh deploy/github_id_rsa.gpg
+        env:
+          PASSPHRASE: ${{ secrets.UNISON_HOMEPAGE_DEPLOY_KEY_PASSPHRASE }}
+      - name: Add known host
+        run: mkdir -p $HOME/.ssh && cat deploy/known_hosts >> $HOME/.ssh/known_hosts
+      - name: Deploy to server
+        run: ssh -i github_id_rsa uso@korshavn.net test ${{ github.event.inputs.build_number }}
