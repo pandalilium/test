@@ -15,7 +15,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v1
       - name: Package
-        run: cd src && zip -r ../unison-homepage.zip . && cd ..
+        run: cd www && zip -r ../unison-homepage.zip . && cd ..
       - name: Resolve branch name
         id: vars
         run: echo ::set-output name=branch_name::${GITHUB_REF#refs/*/}

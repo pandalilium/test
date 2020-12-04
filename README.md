@@ -2,7 +2,8 @@
 
 ## Develop
 
-The folder "src" is the www root; the site. Everything here gets rolled out to the server
+The folder "www" is the root of the website.
+Everything here gets rolled out to the server
 
 ## Pull request
 
