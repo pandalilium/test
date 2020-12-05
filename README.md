@@ -14,5 +14,12 @@ Everything here gets rolled out to the server
 
 ## How to deploy to server
 
-Github Actions for deployment. To be described.
+### Test server
 
+All pull requests to branch _main_ trigger a build and a release.
+Invoke the _"Deploy To Test"_ workflow to deploy to the test server.
+The invocation will prompt for the correct branch name and build number. 
+
+### Production server 
+
+Builds on _main_ branch will automatically proceed with deployment to production.

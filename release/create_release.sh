@@ -23,9 +23,7 @@ SERVER=https://api.github.com
 OUTPUT=$(curl -s -H "Authorization: token ${TOKEN}" \
   -d '{
   "tag_name": "v'"${VERSION}"'",
-  "target_commitish": "'"${BRANCH}"'",
-  "name": "'"${VERSION}"'",
-  "body": "Release created from branch '"${BRANCH}"'"
+  "name": "'"${VERSION}"'"
 }' \
 ${SERVER}/repos/korshavn/unison-homepage/releases)
 
