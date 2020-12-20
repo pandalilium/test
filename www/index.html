@@ -1,93 +1,18 @@
-<!DOCTYPE html>
-<html lang="no" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <link rel="author" href="https://www.uso.no">
-    <link rel="icon" type="image/svg+xml" href="">
-    <link rel="alternate icon" href="https://uso.no/wicket/resource/no.uso.unison.layout.components.UnisonWebPage/images/uso-140-trans.png">
-    <link rel="stylesheet" href="styles.css">
-    <meta name="author" content="USO">
-    <meta name="creator" content="USO">
-    <meta name="description" content="Alfaversjon av USOs nye hjemmeside">
-    <meta name="robots" content="noindex, nofollow">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Universitetets symfoniorkester Oslo</title>
-    <style>
-      :root {
-        --bgcolor1: #def; /* bakgrunnsfarge 1 */
-        --bgcolor2: #fff; /* bakgrunnsfarge 2 */
-        --margin: 2em 2ch; /* standard margin */
-      }
-      html {
-        background-color: var(--bgcolor1);
-      }
-      body {
-        background-color: var(--bgcolor2);
-        margin: var(--margin);
-        border-radius: var(--margin);
-      }
-      .banner {
-        margin: -2em -2ch 0;
-      }
-      .banner img {
-        width: 100%;
-        height: 15vh;
-        object-fit: cover;
-      }
-      main {
-        margin: var(--margin);
-        display: grid;
-        grid-template-columns: 2fr 3fr;
-      }
-      iframe {
-        width: 100%;
-        height: 100%;
-        border: none;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="banner">
-      <img src="https://uso.no/images/uso_full_crop1.png" alt="">
+---
+layout: default
+---
+<!-- Header (Image/home) -->
+<div class="w3-container w3-center w3-content w3-wide" id="home">
+    <img src="img/orkester.jpg" style="width:100%">
+</div>
+<!-- Page content -->
+<div class="w3-content" style="max-width:2000px;margin-top:46px">
+
+    <!-- Neste konsert -->
+    <div class="w3-container w3-content w3-center" style="max-width:800px">
+        <div class=" w3-padding-16">
+            {% include nesteKonsert.html %}
+        </div>
     </div>
-    <main>
-      <iframe srcdoc="<!DOCTYPE html>
-      <html lang='en'>
-      <head>
-          <meta charset='UTF-8'>
-          <title>Universitetets symfoniorkester Oslo</title>
-      </head>
-      <body>
 
-          <h1>Dette er den nye hjemmesiden vår.</h1>
-
-          <ul>
-              <li>
-                  Den gamle portalen ligger her: <a href='/portal'>USO Gammel Portal</a>
-              </li>
-              <li>
-                  Nytt medlemssystem er under utvikling, ligger her: <a href='/frontend'>Nytt medlemssystem</a>
-              </li>
-              <li>
-                  Vår nye wiki/intranett er fortsatt ikke tilgjengelig.
-              </li>
-          </ul>
-
-
-      </body>
-      </html>" width="300" height="200"></iframe>
-      <section><h2>Kommende konserter/&ZeroWidthSpace;program/&ZeroWidthSpace;sesongplan</h2></section>
-      <section><h2>Plakat for neste konsert</h2></section>
-      <section><h2>Kontaktinfo</h2></section>
-      <section><h2>Om orkesteret</h2></section>
-      <section><h2>About us (engelsk)</h2></section>
-      <section><h2>Bli medlem</h2></section>
-      <section><h2>Grasrotandelen</h2></section>
-      <section><h2>Opphavsretts&shy;informasjon</h2></section>
-      <section><h2>Kalender? (trenger vi dette på de åpne sidene?)</h2></section>
-      <section><h2>Lenke til konsert&shy;database</h2></section>
-      <section><h2>Lenker (til andre orkestere)</h2></section>
-      <section><h2>++?</h2></section>
-    </main>
-  </body>
-</html>
+</div>

@@ -1,0 +1,14 @@
+---
+layout: default
+permalink: /plakater/
+---
+
+<div class="posts">
+  {% for post in site.posts %}
+    <article class="post">
+    	<h1 class="postlist"><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
+    	Hei
+    </article>
+
+  {% endfor %}
+</div><h1 class="postlist"><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
