@@ -11,3 +11,4 @@ target
 *.versionsBackup
 .java-version
 .releases
+_site
