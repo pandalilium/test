@@ -12,3 +12,4 @@ target
 .java-version
 .releases
 _site
+.jekyll-cache
